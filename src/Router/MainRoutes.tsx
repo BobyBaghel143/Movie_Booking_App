@@ -1,11 +1,13 @@
+import { Route, Routes } from "react-router-dom";
+
 import Home from "../Page/Home";
 
 function MainRoutes() {
-    return (
-        <div>
-            <Home/>
-        </div>
-    )
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  );
 }
 
 export default MainRoutes;
