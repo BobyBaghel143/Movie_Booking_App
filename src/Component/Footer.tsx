@@ -1,6 +1,6 @@
 function HomeFooter() {
   return (
-    <footer className="footer grid-rows-2 p-10 bg-neutral text-neutral-content">
+    <footer className="footer grid-rows-2 p-10 bg-neutral text-neutral-content rounded-md">
       <nav>
         <header className="footer-title">Services</header>
         <a className="link link-hover">Branding</a>
