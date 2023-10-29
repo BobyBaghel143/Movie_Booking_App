@@ -4,8 +4,8 @@ type Banner = {
 
 function HomeBanner({ Image }: Banner) {
   return (
-    <div className=" flex items-center justify-center my-4">
-      <img src={Image} />
+    <div className="h-20 w-full mt-4">
+      <img src={Image} className="h-full w-full rounded-lg " />
     </div>
   );
 }

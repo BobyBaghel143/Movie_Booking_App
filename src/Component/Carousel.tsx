@@ -5,7 +5,7 @@ import CarouselImage4 from '../Assets/c4.png';
 
 function HomeCarousel() {
   return (
-    <div className="carousel w-full h-[15rem] m-2 rounded-md  ">
+    <div className="carousel w-full h-[16rem] m-2 rounded-md  ">
       <div id="slide1" className="carousel-item relative w-full ">
         <img src={CarouselImage1} className="w-full" />
         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
