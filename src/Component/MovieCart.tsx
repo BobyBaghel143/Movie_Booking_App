@@ -6,7 +6,7 @@ type CartProps = {
 
 function HomeMovieCart({MovieImage}:CartProps) {
     return (
-        <div className=' flex flex-col items-center justify-center  h-[450px] w-[265px] '>
+        <div className=' flex flex-col items-center justify-center  h-[450px] w-[265px] my-2'>
             <img src={MovieImage} className='h-[95%] w-full rounded-tl-lg rounded-tr-lg ' />
             <div className='flex items-center justify-start text-xl bg-black w-full text-white rounded-bl-lg rounded-br-lg gap-2'>
                 <div className='flex items-center justify-start mr-3 gap-2'>  
