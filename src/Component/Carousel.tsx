@@ -1,7 +1,7 @@
-import CarouselImage1 from '../Assets/tree1.jpg';
-import CarouselImage2 from '../Assets/tree2.jpg';
-import CarouselImage3 from '../Assets/tree3.jpg';
-import CarouselImage4 from '../Assets/tree4.jpg';
+import CarouselImage1 from '../Assets/c1.jpg';
+import CarouselImage2 from '../Assets/c2.jpg';
+import CarouselImage3 from '../Assets/c3.png';
+import CarouselImage4 from '../Assets/c4.png';
 
 function HomeCarousel() {
   return (
