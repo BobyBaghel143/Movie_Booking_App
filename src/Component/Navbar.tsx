@@ -7,17 +7,17 @@ import logo from '../assets/logo.png';
 function Navbar() {
   return (
     <div className=" bg-[#333545]">
-      <div className="navbar bg-[#333545] ">
+      <div className="navbar bg-[#333545] w-[80vw] mx-auto ">
         <div className="flex-1">
           <div className='h-12 mr-2' >
             <img className=" h-[100%] w-36 " src={logo} />
           </div>
           <div className="form-control w-3/5 flex flex-row items-center  ">
-            <div className='h-[2.5rem] w-[2rem] flex items-center justify-center  bg-white rounded-tl-md rounded-bl-md ' >
+            <div className='h-[2.5rem] w-[2rem] flex items-center justify-center  bg-white rounded-tl-md rounded-bl-md' >
               <BsSearch />
             </div>
-            <div className='form-control w-4/5'>
-              <input type="text" placeholder="Search" className=" h-[2.5rem]  w-full rounded-tr-md rounded-br-md md:w-auto"/>
+            <div className='form-control lg:w-4/5'>
+              <input type="text" placeholder="Search" className=" h-[2.5rem]  w-full rounded-tr-md rounded-br-md "/>
             </div>
           </div>
         </div>

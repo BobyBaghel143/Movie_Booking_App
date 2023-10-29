@@ -18,7 +18,7 @@ function Home() {
       <div className="min-h-[52rem] w-[80vw] flex flex-col mx-auto  ">
         <HomeBanner Image={Banner} />
         <div className="text-2xl  font-bold text-black mt-6"> Recommended Movie </div>
-        <div className="flex items-center justify-center gap-6 mt-2">
+        <div className="flex items-center justify-center gap-4 mt-2 flex-col lg:flex-row  ">
           <HomeMovieCart MovieImage={Poster1} />
           <HomeMovieCart MovieImage={Poster3} />
           <HomeMovieCart MovieImage={Poster4} />
