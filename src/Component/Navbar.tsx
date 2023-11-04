@@ -3,7 +3,6 @@ import { BsSearch } from 'react-icons/bs';
 import dummy from '../Assets/dummy.jpg';
 import logo from '../assets/logo.png';
 
-
 function Navbar() {
   return (
     <div className=" bg-[#333545]">
@@ -12,7 +11,7 @@ function Navbar() {
           <div className='h-16 w-36 mr-2' >
             <img className=" h-full w-full " src={logo} />
           </div>
-          <div className="form-control w-3/5 flex flex-row items-center  ">
+          <div className="form-control  w-[164px] flex flex-row items-center md:w-2/5  lg:w-3/5 ">
             <div className='h-[2.5rem] w-[2rem] flex items-center justify-center  bg-white rounded-tl-md rounded-bl-md' >
               <BsSearch />
             </div>
