@@ -1,7 +1,7 @@
-import { BsSearch } from 'react-icons/bs';
+import { BsSearch } from "react-icons/bs";
 
-import dummy from '../Assets/dummy.jpg';
-import logo from '../assets/logo.png';
+import dummy from "../Assets/dummy.jpg";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   return (
@@ -35,8 +35,26 @@ function Navbar() {
           </div>
         </div>
       </div>
+
+      <div className="text-white bg-[#22232d] flex  ">
+        <div className=" flex items-center justify-between w-[80vw]  mx-auto">
+          <div className="flex items-center gap-4 ">
+            <div>Movie</div>
+            <div>Event</div>
+            <div>Stream</div>
+            <div>Sports</div>
+            <div>Activities</div>
+            <div>Buzz</div>
+          </div>
+          <div className="flex items-center gap-4">
+            <div>ListYourShow</div>
+            <div>Corporates</div>
+            <div>Offers</div>
+            <div>Gift_Cards</div>
+          </div>
+        </div>
+      </div>
     </div>
-   
   );
 }
 
