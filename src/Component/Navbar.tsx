@@ -1,7 +1,8 @@
 import { BsSearch } from "react-icons/bs";
+import { RxTextAlignJustify } from "react-icons/rx";
 
 import dummy from "../Assets/dummy.jpg";
-import logo from "../assets/logo.png";
+import logo1 from "../assets/logo.png";
 
 function Navbar() {
   return (
@@ -9,7 +10,7 @@ function Navbar() {
       <div className="navbar bg-[#333545] w-[80vw] mx-auto ">
         <div className="flex-1">
           <div className='h-16 w-36 mr-2' >
-            <img className=" h-full w-full " src={logo} />
+            <img className="h-full w-full" src={logo1} />
           </div>
           <div className="form-control  w-[164px] flex flex-row items-center md:w-2/5  lg:w-3/5 ">
             <div className='h-[2.5rem] w-[2rem] flex items-center justify-center  bg-white rounded-tl-md rounded-bl-md' >
@@ -32,6 +33,18 @@ function Navbar() {
               <li> <a className='hover:text-yellow-400' >Settings</a> </li>
               <li> <a className='hover:text-yellow-400' >Logout</a> </li>
             </ul>
+          </div>
+
+          <div className="flex items-center gap-3" >
+            <div className="dropdown dropdown-bottom dropdown-end bg-transparent">
+              <label tabIndex={0} className="btn m-1 px-3 py-1 ">Click</label>
+              <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul>
+            </div>
+            <button className="text-white bg-red-500  px-3 py-1 rounded-md text-sm font-semibold ">Sign In</button>
+            <div className="text-white text-3xl  "> <RxTextAlignJustify /> </div>
           </div>
         </div>
       </div>

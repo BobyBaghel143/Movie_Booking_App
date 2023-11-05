@@ -21,7 +21,7 @@ function Home() {
 
   async function fetchMovies() {
     try {
-      const response = await axiosInstance.get("     ");
+      const response = await axiosInstance.get("/mba/api/v1/auth/movies");
       const movieData = response.data.data.map((movie: Movie) => {
         return {
           id: movie._id,
@@ -52,15 +52,14 @@ function Home() {
           <HomeMovieCart MovieImage={Poster2} />
           <HomeMovieCart MovieImage={Poster5} /> */}
 
-          {moviePosters &&
-            moviePosters.map((moviePoster) => {
-              return (
-                <HomeMovieCart
-                  key={moviePoster.id}
-                  MovieImage={moviePoster.poster}
-                />
-              );
-            })}
+          {moviePosters && moviePosters.map((moviePoster) => {
+            return (
+              <HomeMovieCart
+                key={moviePoster.id}
+                MovieImage={moviePoster.poster}
+              />
+            );
+          })}
         </div>
         <HomeBanner Image={Banner2} />
       </div>
