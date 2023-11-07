@@ -13,19 +13,21 @@ type MoviePoster = [
   {
     id: string;
     poster: string;
+    name: string,
   }
 ];
 
 function Home() {
-  const [moviePosters, setMoviePosters] = useState<MoviePoster>([ { id: "", poster: "" }]);
+  const [moviePosters, setMoviePosters] = useState<MoviePoster>([ { id: "", poster: "", name:"" }]);
 
   async function fetchMovies() {
     try {
-      const response = await axiosInstance.get("/mba/api/v1/auth/movies");
+      const response = await axiosInstance.get("/mba/api/v1/movies");
       const movieData = response.data.data.map((movie: Movie) => {
         return {
           id: movie._id,
           poster: movie.poster,
+          name:movie.name,
         };
       });
       console.log(movieData);
@@ -46,17 +48,13 @@ function Home() {
         <HomeBanner Image={Banner1} />
         <div className="text-2xl  font-bold text-black mt-6 text-center lg:text-start"> Recommended Movie </div>
         <div className="flex items-center justify-center gap-4 mt-2 flex-col lg:flex-row mb-4 ">
-          {/* <HomeMovieCart MovieImage={Poster1} />
-          <HomeMovieCart MovieImage={Poster3} />
-          <HomeMovieCart MovieImage={Poster4} />
-          <HomeMovieCart MovieImage={Poster2} />
-          <HomeMovieCart MovieImage={Poster5} /> */}
-
           {moviePosters && moviePosters.map((moviePoster) => {
             return (
               <HomeMovieCart
                 key={moviePoster.id}
-                MovieImage={moviePoster.poster}
+                movieImage={moviePoster.poster}
+                movieId={moviePoster.id}
+                movieName={moviePoster.name}
               />
             );
           })}
