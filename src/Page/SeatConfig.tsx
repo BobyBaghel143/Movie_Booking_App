@@ -15,7 +15,7 @@ type Row = {
   seats: Seat[],
 }
 
-type SeatState = [Row];
+type SeatState = Row[];
 
 function SeatConfig() {
   const { state } = useLocation();
