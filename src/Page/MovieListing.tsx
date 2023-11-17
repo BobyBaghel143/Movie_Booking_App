@@ -11,6 +11,7 @@ type MovieShows = {
   format: string;
   price: number;
   noOfSeats: number;
+  seatConfiguration: string;
 };
 
 type TheatreData = {
@@ -32,16 +33,17 @@ type theatre = {
 };
 
 type show = {
-  createdAt: string;
-  format: string;
-  movieId: string;
-  noOfSeats: number;
-  price: number;
-  timing: string;
-  updatedAt: string;
-  _v: number;
-  _id: string;
-  theatreId: theatre;
+  createdAt: string,
+  format: string,
+  movieId: string,
+  noOfSeats: number,
+  price: number,
+  timing: string,
+  updatedAt: string,
+  _v: number,
+  _id: string,
+  theatreId: theatre,
+  seatConfiguration: string,
 };
 
 type TheatreState = {
@@ -69,6 +71,7 @@ function MovieListings() {
             format: show.format,
             price: show.price,
             noOfSeats: show.noOfSeats,
+            seatConfiguration: show.seatConfiguration ? show.seatConfiguration : "",
           });
         } else {
           showState[show.theatreId._id] = {
@@ -81,6 +84,7 @@ function MovieListings() {
                 format: show.format,
                 price: show.price,
                 noOfSeats: show.noOfSeats,
+                seatConfiguration: show.seatConfiguration ? show.seatConfiguration : "",
               },
             ],
           };
@@ -119,12 +123,7 @@ function MovieListings() {
         {/* Theatre listing */}
         <div className="bg-slate-300 mt-4 w-[100vw]">
           <div className="w-[80vw] mx-auto rounded-xl bg-[#ffffff] ">
-            {/* <ThreateShowCard num={3} />
-            <ThreateShowCard num={15} />
-            <ThreateShowCard num={2} /> */}
-
-            {theatreData &&
-              Object.keys(theatreData).map((theatreId: string) => {
+            {theatreData && Object.keys(theatreData).map((theatreId: string) => {
                 return (
                   <ThreateShowCard shows={theatreData[theatreId].shows} key={theatreId} name={theatreData[theatreId].theatreName}/>
                 );

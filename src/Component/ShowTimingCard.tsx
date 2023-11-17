@@ -1,13 +1,25 @@
+import { useNavigate } from "react-router-dom";
+
 type Props = {
     timing: string,
     format: string,
-    price:string,
+    price: string,
+    config: string,
 }
 
-function ShowTimingCard({timing, format, price}:Props) {
+function ShowTimingCard({ timing, format, price, config }: Props) {
+
+    const navigate = useNavigate();
+
+    function onShowSelection() {
+        if (config) {
+            navigate('/movie/seatSelection', {state:{config}});
+        }
+    }
+
     return (
-        <div className=" w-32 px-2 py-1 mx-2 my-2 group relative flex flex-col items-center justify-center border border-black text-sm text-green-400 rounded-lg  cursor-pointer " >
-            <div>{timing} PM </div>
+        <div onClick={onShowSelection} className=" w-32 px-2 py-1 mx-2 my-2 group relative flex flex-col items-center justify-center border border-black text-sm text-green-400 rounded-lg  cursor-pointer " >
+            <div>{timing} </div>
             <div>{format}</div>
             {/* <div>Recliners</div> */}
             

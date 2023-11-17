@@ -4,11 +4,12 @@ import ShowTimingCard from "./ShowTimingCard";
 import TheatreNameCard from "./TheatreNameCard";
 
 type MovieShows = {
-  id: string; // show id
-  timing: string;
-  format: string;
-  price: number;
-  noOfSeats: number;
+  id: string,           // show id
+  timing: string,
+  format: string,
+  price: number,
+  noOfSeats: number,
+  seatConfiguration: string,
 };
 
 function formatTime(timeString: string) {
@@ -23,6 +24,8 @@ type TheatreShowCardProps = {
 };
 
 function ThreateShowCard({ name, shows }: TheatreShowCardProps) {
+
+  
   return (
     <div className=" w-full border-md px-4 pt-4 pb-2">
       <div className="flex justify-start items-start">
@@ -31,19 +34,16 @@ function ThreateShowCard({ name, shows }: TheatreShowCardProps) {
         </div>
 
         <div className="flex gap-2 min-w-[7%]  max-w-[10%] font-light ">
-          <div className="text-2xl">
-            {" "}
-            <BsInfoCircle />{" "}
-          </div>
+          <div className="text-2xl"> <BsInfoCircle /> </div>
           <div> INFO </div>
         </div>
 
         <div>
           <div className="flex items-center justify-start w-auto flex-wrap">
-            {/* {Array(num).fill(0).map(() => {return ( <ShowTimingCard time="07:11" /> );})} */}
             {shows.map((show: MovieShows) => {
               return (
                 <ShowTimingCard
+                  config={show.seatConfiguration}
                   format={show.format}
                   price={show.price.toString()}
                   timing={formatTime(new Date(show.timing).toLocaleTimeString())}
