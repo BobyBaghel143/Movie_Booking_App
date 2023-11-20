@@ -6,16 +6,18 @@ import axiosInstance from "../Config/AxiosInstance";
 import HomeLayout from "../Layouts/HomeLayout";
 
 type MovieShows = {
-  id: string; // show id
+  id: string;            // show id
   timing: string;
   format: string;
+  movieId: string;
+  theatreId: string;
   price: number;
   noOfSeats: number;
   seatConfiguration: string;
 };
 
 type TheatreData = {
-  id: string;
+  id: string;        // theatreId
   theatreName: string;
   shows: [MovieShows];
 };
@@ -34,12 +36,12 @@ type theatre = {
 
 type show = {
   createdAt: string,
+  updatedAt: string,
+  timing: string,
   format: string,
   movieId: string,
-  noOfSeats: number,
   price: number,
-  timing: string,
-  updatedAt: string,
+  noOfSeats: number,
   _v: number,
   _id: string,
   theatreId: theatre,
@@ -70,6 +72,8 @@ function MovieListings() {
             timing: show.timing,
             format: show.format,
             price: show.price,
+            movieId: show.movieId,
+            theatreId:show.theatreId._id,
             noOfSeats: show.noOfSeats,
             seatConfiguration: show.seatConfiguration ? show.seatConfiguration : "",
           });
@@ -83,6 +87,8 @@ function MovieListings() {
                 timing: show.timing,
                 format: show.format,
                 price: show.price,
+                movieId: show.movieId,
+                theatreId: show.theatreId._id,
                 noOfSeats: show.noOfSeats,
                 seatConfiguration: show.seatConfiguration ? show.seatConfiguration : "",
               },

@@ -7,6 +7,8 @@ type MovieShows = {
   id: string,           // show id
   timing: string,
   format: string,
+  movieId: string,
+  theatreId: string,
   price: number,
   noOfSeats: number,
   seatConfiguration: string,
@@ -43,6 +45,9 @@ function ThreateShowCard({ name, shows }: TheatreShowCardProps) {
             {shows.map((show: MovieShows) => {
               return (
                 <ShowTimingCard
+                  movieId={show.movieId}
+                  theatreId={show.theatreId}
+                  showId={show.id}
                   config={show.seatConfiguration}
                   format={show.format}
                   price={show.price.toString()}

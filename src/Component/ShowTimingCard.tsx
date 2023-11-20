@@ -5,15 +5,20 @@ type Props = {
     format: string,
     price: string,
     config: string,
+    movieId: string,
+    theatreId: string,
+    showId: string,
+    
 }
 
-function ShowTimingCard({ timing, format, price, config }: Props) {
+function ShowTimingCard({ timing, format, price, config, movieId, theatreId, showId }: Props) {
 
     const navigate = useNavigate();
 
     function onShowSelection() {
+        // console.log(movieId, theatreId, showId);
         if (config) {
-            navigate('/movie/seatSelection', {state:{config}});
+            navigate('/movie/seatSelection', {state:{config, timing, price, movieId, theatreId, showId}});
         }
     }
 
