@@ -14,7 +14,7 @@ function MainRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/movie/listing" element={<MovieListings />} />
       <Route path="/movie/seatSelection" element={<SeatConfig />} />
-      <Route path="/movie/bookings" element={<Bookings />} />
+      <Route path="/bookings" element={<Bookings />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/celender" element={<CelenderPage />} />

@@ -41,10 +41,10 @@ function SeatConfig() {
         }
       });
     });
-    // console.log(selectedSeats);
+    console.log(selectedSeats);
     const seatsJson = JSON.stringify(selectedSeats).replaceAll('"', "'");
 
-    const response = await axiosInstance.post("/mba/api/v1/bookings", {
+    const response = await axiosInstance.post('/mba/api/v1/bookings', {
         seat: seatsJson,
         movieId: state.movieId,
         theatreId: state.theatreId,
@@ -59,11 +59,10 @@ function SeatConfig() {
         },
       }
     );
+    // console.log(response.data);
     const showId = state.showId;
     if (response.data.success) {
-      navigate("/movie/bookings", {
-        state: { booking: response.data, showId },
-      });
+      navigate("/bookings", {state: { booking: response.data, showId}});
     }
   }
 
@@ -129,10 +128,7 @@ function SeatConfig() {
           );
         })}
         <div className="my-5 w-full flex items-center justify-center">
-          <button
-            onClick={onBooking}
-            className="bg-green-500 w-[30%]   py-2 text-white font-semibold rounded hover:bg-green-400 transition-all "
-          >
+          <button onClick={onBooking} className="bg-green-500 w-[30%]   py-2 text-white font-semibold rounded hover:bg-green-400 transition-all ">
             Create Booking
           </button>
         </div>
